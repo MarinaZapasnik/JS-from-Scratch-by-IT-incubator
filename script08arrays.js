@@ -9,7 +9,7 @@ function calculateAverage(scores) {
     return Math.round(sum / count);
 }
 
-function reduceAverage(scores) {
+function reduceAverage(scores) {     /// с применением метода reduce 
     return Math.round(
         scores.reduce((sum, item) => {
         return sum + item;
@@ -42,7 +42,7 @@ function classifyScores(scores) {
     return classifiedScores;
 }
 
-function mapScores(scores) {
+function mapScores(scores) { // сприменением метода map 
     
     return scores.map(score => {
         if (score >= 90) {
@@ -60,7 +60,7 @@ function mapScores(scores) {
     
 }
 
-function quickMapScores(scores) {
+function quickMapScores(scores) { ////    метод map и тернарный оператор
     return scores.map(score => 
         score >= 90 ? "A" :
         score >= 80 ? "B" :
@@ -92,7 +92,7 @@ console.log(`Classified scores: ${quickMapedScores}`)
 //-------------1-------------------
 
 
-function reverseArray(array) {
+function reverseArray(array) {   ////перевернуть массив с помощью метода push обратным перебором
     let reverseArray = [];
     for (let i = array.length - 1; i >= 0; i --) {
         reverseArray.push(array[i])
@@ -100,7 +100,7 @@ function reverseArray(array) {
     return reverseArray
 }
 
-function unshiftReverseArray(array) {
+function unshiftReverseArray(array) {    ////    перевернуть массив с помощью метода unshift прямым перебором
     let reverseArray = [];
     for (let i = 0; i< array.length; i ++) {
         reverseArray.unshift(array[i])
@@ -108,8 +108,8 @@ function unshiftReverseArray(array) {
     return reverseArray
 }
 
-function simpleReverseArrayWithMethod(array) {
-    let newArray = [ ...array]
+function simpleReverseArrayWithMethod(array) { //// перевернуть массив с помощью метода reverse 
+    let newArray = [ ...array]             //// здесь я делаюдеструктуризацию, так как метод реверс изменяет исходный массив
     return newArray.reverse()
 }
 
@@ -119,7 +119,7 @@ console.log(`Reverse array from ${myScores} is ${simpleReverseArrayWithMethod(my
 
 //--------------------------2-------------------------
 
-function removeElement (array, element) {
+function removeElement (array, element) {         ////удаление элемента массива с помощью перебора и метода пуш
     let newArray = []
     for (let i = 0; i < array.length; i++) {
         if (array[i] !== element) {
@@ -130,8 +130,8 @@ function removeElement (array, element) {
     return newArray
 }
 
-function removeElementWithMethod (array, element) {
-    let newArray = [ ...array ]
+function removeElementWithMethod (array, element) {     /// удаление массива с помощью перебора и метода сплайс
+    let newArray = [ ...array ]                         ///// делаем новый массив с помощью деструктуризации, потому что метод сплайс изменяет исходный массив
     for (let i = 0; i< array.length; i ++){
         if (newArray[i] === element) {
             
