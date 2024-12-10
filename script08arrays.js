@@ -109,7 +109,8 @@ function unshiftReverseArray(array) {
 }
 
 function simpleReverseArrayWithMethod(array) {
-    return array.reverse()
+    let newArray = [ ...array]
+    return newArray.reverse()
 }
 
 console.log(`Reverse array from ${myScores} is ${reverseArray(myScores)}`);
@@ -130,23 +131,25 @@ function removeElement (array, element) {
 }
 
 function removeElementWithMethod (array, element) {
-
+    let newArray = [ ...array ]
     for (let i = 0; i< array.length; i ++){
-        if (array[i] === element) {
+        if (newArray[i] === element) {
             
-            array.splice(i, 1)
+            newArray.splice(i, 1)
         }
     }
-    return array
+    return newArray
 }
 
 function removeElementWithFilter(array, element) {
-    let newArray = array.filter(item => item !== element)
-    return newArray
-}
+    return array.filter(item => item !== element)
+    
+ }
 
 let deletedElement = 85;
 console.log(`New array without element ${deletedElement} in array ${myScores} is ${removeElement(myScores, deletedElement)}`);
 console.log(`New array without element ${deletedElement} in array ${myScores} is ${removeElementWithMethod(myScores, deletedElement)}`);
 console.log(`New array without element ${deletedElement} in array ${myScores} is ${removeElementWithFilter(myScores, deletedElement)}`);
+console.log(myScores);
+
 
